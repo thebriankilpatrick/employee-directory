@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import API from "../utils/API";
+import Moment from "react-moment";
 
 // Add search bar, with functionality (search by name, and search by ???)
 // use Moment to format the DOB
@@ -38,7 +39,7 @@ class Users extends Component {
                                     <td>{name.first + " " + name.last}</td>
                                     <td>{email}</td>
                                     <td>{cell}</td>
-                                    <td>{dob.date}</td>
+                                    <td><Moment format="MM/DD/YYYY">{dob.date}</Moment></td>
                                 </tr>
                             )
                         })}
