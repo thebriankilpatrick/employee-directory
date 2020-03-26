@@ -1,15 +1,14 @@
 import React, { Component } from "react";
 import API from "../utils/API";
 
-// Declare response from the random user API call as a variable here.
-// Then use {} to get information from that variable into your function
+// Add search bar, with functionality (search by name, and search by ???)
+// use Moment to format the DOB
 
 class Users extends Component {
     state = {
         results: []
     };
 
-    // This should, hopefully, set the results array in the Users class to the res you get back from the API call
     componentDidMount() {
         API.getUsers().then(res => {
             this.setState({ results: res.data.results })
@@ -21,8 +20,6 @@ class Users extends Component {
     
 
     render() {
-        // console log returns an empty array
-        console.log(this.state.results);
         return (
             <div className="container">
                 <table className="table">
@@ -51,28 +48,5 @@ class Users extends Component {
         )
     }
 }
-
-
-// function Table() {
-//     return (
-//         <div className="container">
-//             <table className="table">
-//                 <thead>
-//                     <tr>
-//                         <th scope="col">Name</th>
-//                         <th scope="col">Email</th>
-//                         <th scope="col">Phone</th>
-//                         <th scope="col">Birthday</th>
-//                     </tr>
-//                 </thead>
-//                 <tbody>
-//                     <tr>
-                    
-//                     </tr>
-//                 </tbody>
-//             </table>
-//         </div>
-//     )
-// }
 
 export default Users;
