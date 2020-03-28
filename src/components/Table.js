@@ -27,13 +27,15 @@ class Users extends Component {
     };
 
     handleInputChange = (event) => {
-
         const res = this.searchEmployee(event.target.value);
-
         this.setState({
             filteredResults: res
         })
     };
+
+    handleSort = () => {
+        this.setState(this.state.results.sort((a, b) => a.name.first.localeCompare(b.name.first)));
+    }
 
     render() {
         return (
@@ -44,7 +46,7 @@ class Users extends Component {
                 <table className="table">
                     <thead>
                         <tr>
-                            <th scope="col">Name</th>
+                            <th scope="col">Name <i className="fas fa-sort-down" id="sortBtn" onClick={this.handleSort}></i></th>
                             <th scope="col">Email</th>
                             <th scope="col">Phone</th>
                             <th scope="col">Birthday</th>

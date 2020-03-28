@@ -1,23 +1,5 @@
 import React from "react";
 
-// function handleInputChange(event) {
-//     this.setState({
-//         results: filterEmployee(event.target.value, maxResults)
-//     });
-// }
-
-// const filterEmployee = (searchText) => {
-//     return this.state.results.filter((employee) => {
-//       if (employee.data.name.toLowerCase().includes(searchText.toLowerCase())) {
-//         return true;
-//       }
-//       return false;
-//     }).slice(0);
-//   }
-  
-// const maxResults = 50;
-
-
 function Search(props) {
 
     return (

@@ -1,6 +1,4 @@
 import React from "react";
-// import Search from "./Search";
-// import Table from "./Table";
 
 function Jumbo() {
     return (
