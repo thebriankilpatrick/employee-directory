@@ -1,5 +1,6 @@
 import React from "react";
-import Search from "./Search";
+// import Search from "./Search";
+// import Table from "./Table";
 
 function Jumbo() {
     return (
@@ -7,7 +8,6 @@ function Jumbo() {
             <div className="container">
                 <h1 className="display-4">Employee Directory</h1>
                 <p className="lead">Search through the table of employees below</p>
-                <Search ></Search>
             </div>
         </div>
     )

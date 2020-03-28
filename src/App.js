@@ -4,6 +4,7 @@ import Jumbo from "./components/Jumbo";
 // import Search from "./components/Search";
 import Table from "./components/Table";
 import './App.css';
+// import Search from "./components/Search";
 
 function App() {
   return (

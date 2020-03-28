@@ -1,28 +1,46 @@
 import React, { Component } from "react";
 import API from "../utils/API";
 import Moment from "react-moment";
-
-// Add search bar, with functionality (search by name, and search by ???)
-// use Moment to format the DOB
+import Search from "./Search";  
 
 class Users extends Component {
     state = {
-        results: []
+        results: [],
+        filteredResults: []
     };
+
+    searchEmployee = (searchText) => {
+        const results = this.state.results;
+        const filteredResults = results.filter((employee) => {
+            const fullName = employee.name.first + employee.name.last;
+            return fullName.toLowerCase().includes(searchText.toLowerCase());
+        })
+        return filteredResults;
+    }
 
     componentDidMount() {
         API.getUsers().then(res => {
-            this.setState({ results: res.data.results })
+            this.setState({ results: res.data.results, filteredResults: res.data.results })
         }).catch(err => {
             console.log(err);
         });
     };
 
-    
+    handleInputChange = (event) => {
+
+        const res = this.searchEmployee(event.target.value);
+
+        this.setState({
+            filteredResults: res
+        })
+    };
 
     render() {
         return (
             <div className="container">
+                <Search 
+                    handleInputChange={this.handleInputChange}>
+                </Search>
                 <table className="table">
                     <thead>
                         <tr>
@@ -33,7 +51,7 @@ class Users extends Component {
                         </tr>
                     </thead>
                     <tbody>
-                        {this.state.results.map(({name, email, cell, dob}) => {
+                        {this.state.filteredResults.map(({name, email, cell, dob}) => {
                             return (
                                 <tr>
                                     <td>{name.first + " " + name.last}</td>
