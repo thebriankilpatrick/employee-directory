@@ -1,6 +1,7 @@
 {
   "name": "employee-directory",
   "version": "0.1.0",
+  "homepage": "https://thebriankilpatrick.github.io/employee-directory/",
   "private": true,
   "engines": {
     "npm": "6.9.0",
