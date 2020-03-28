@@ -2,6 +2,8 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).  
 
+[Link to Employee Directory](https://thebriankilpatrick.github.io/employee-directory/)  
+
 The Employee Directory is a web application that allows the user to view, search, and sort employees.  
 
 ### Uses and How to Use  
